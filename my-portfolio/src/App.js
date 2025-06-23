@@ -21,7 +21,7 @@ function Navbar({ expanded, setExpanded, darkMode, setDarkMode }) {
           <li key={section.id}>
             <a
               href={`#${section.id}`}
-              title={!expanded ? section.title : undefined}  // Add this line!
+              title={!expanded ? section.title : undefined}
             >
               <span className="nav-icon">{section.icon}</span>
               <span className="nav-label">{section.title}</span>

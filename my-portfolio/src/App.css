@@ -26,6 +26,8 @@ body {
   padding: 1.2em 0 1.2em 0;
   transition: width 0.26s cubic-bezier(.65,.05,.35,1);
   overflow-x: hidden;
+  overflow-y: auto;         /* Enables vertical scroll */
+  max-height: 100vh;
 }
 
 .navbar-vertical.expanded {
@@ -66,7 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.15em;   /* less space between logo and name */
+  margin-top: 0.15em;
   margin-bottom: 0.25em;
   animation: fadein 0.26s;
   opacity: 1;
@@ -338,6 +340,9 @@ ul {
     padding: 0.7em 1em;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: none;
+    overflow-y: visible;
+    overflow-x: hidden;
+    max-height: none;
   }
   .logo-title-vertical {
     margin-bottom: 0;
@@ -349,6 +354,9 @@ ul {
     width: auto;
     margin-left: 2em;
     align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100vw;
   }
   .navbar-links-vertical li {
     width: auto;
@@ -388,6 +396,9 @@ ul {
     min-width: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     padding: 0.7em 0.5em;
+    overflow-x: auto;
+    overflow-y: visible;
+    max-height: none;
   }
   .logo-title-vertical {
     margin-bottom: 0;
@@ -398,6 +409,9 @@ ul {
     gap: 0.5em;
     width: auto;
     margin-left: 0.6em;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100vw;
   }
   .main-vertical-container {
     margin-left: 0 !important;
