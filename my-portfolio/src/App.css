@@ -203,7 +203,7 @@ body {
 }
 .nav-toggle.nav-toggle-bottom:hover { color: #56e0c7; background: #222532; }
 
-/* DARK MODE */
+/* --------- DARK MODE (ENHANCED!) ----------- */
 body.dark {
   background: #181a20;
   color: #e5eaf4;
@@ -249,6 +249,33 @@ body.dark .dark-toggle:hover {
   color: #ffd700;
   background: #30344d;
 }
+
+body.dark .main-vertical-container,
+.dark .main-vertical-container {
+  background: #181a20;
+  color: #e5eaf4;
+}
+
+body.dark .about-page-container,
+.dark .about-page-container {
+  background: #23242b;
+  color: #e5eaf4;
+  box-shadow: 0 1px 8px rgba(20,30,40,0.16);
+}
+
+body.dark .mobile-nav-dropdown,
+.dark .mobile-nav-dropdown {
+  background: #22232a;
+  color: #e5eaf4;
+}
+
+body.dark .mobile-nav-select,
+body.dark .mobile-nav-select option {
+  background: #232532;
+  color: #e5eaf4;
+}
+
+/* End dark mode additions */
 
 .dark-toggle {
   background: none;
@@ -456,4 +483,42 @@ body.dark .mobile-nav-select option {
     padding: 0.43em 0.7em;
     margin-right: 0.5em;
   }
+}
+
+.about-clickable-tile {
+  transition: box-shadow 0.17s, transform 0.12s;
+  cursor: pointer;
+  outline: none;
+}
+.about-clickable-tile:active,
+.about-clickable-tile:focus,
+.about-clickable-tile:hover {
+  box-shadow: 0 4px 20px rgba(60,120,255,0.09), 0 1.5px 8px rgba(30,40,70,0.11);
+  transform: scale(1.012);
+  border: 1.5px solid #63ffe4;
+}
+
+.about-page-container {
+  max-width: 800px;
+  margin: 5.5em auto 0 auto;
+  padding: 3em 1.2em 2em 1.2em;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 1px 8px rgba(50,60,80,0.06);
+  text-align: center;
+}
+
+.navbar-redirect-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(37, 41, 53, 0.4);
+  animation: fadeOverlayOut 0.4s cubic-bezier(.45,0,.55,1);
+  pointer-events: none;
+}
+@keyframes fadeOverlayOut {
+  0% { opacity: 0; }
+  20% { opacity: 0.15; }
+  60% { opacity: 0.5; }
+  100% { opacity: 0; }
 }

@@ -1,92 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
-import logo from "./assets/logo.svg";
 import sectionsContent from "./sections";
-import { FaAngleDoubleRight, FaAngleDoubleLeft, FaMoon, FaSun } from "react-icons/fa";
-
-function Navbar({ expanded, setExpanded, darkMode, setDarkMode, isMobile }) {
-  if (isMobile) {
-    // Mobile picklist navbar
-    return (
-      <div className="mobile-nav-dropdown">
-        <div className="mobile-nav-logo-block">
-          <img src={logo} alt="Logo" className="mobile-nav-logo" />
-          <div className="mobile-navbar-name-block">
-            <span className="mobile-navbar-name">HEMASUNDAR</span>
-            <span className="mobile-navbar-name">TATIPUDI</span>
-          </div>
-        </div>
-        <select
-          className="mobile-nav-select"
-          onChange={e => {
-            const id = e.target.value;
-            const section = document.getElementById(id);
-            if (section) section.scrollIntoView({ behavior: "smooth" });
-          }}
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Select section…
-          </option>
-          {sectionsContent.map(section => (
-            <option key={section.id} value={section.id}>
-              {section.title}
-            </option>
-          ))}
-        </select>
-        <button
-          className="dark-toggle mobile-dark-toggle"
-          onClick={() => setDarkMode(d => !d)}
-          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
-      </div>
-    );
-  }
-
-  // Desktop sidebar navbar
-  return (
-    <nav className={`navbar-vertical${expanded ? " expanded" : ""}`}>
-      <div className="logo-title-vertical">
-        <img src={logo} alt="Logo" className="logo-vertical" />
-        {expanded && (
-          <div className="navbar-name-block">
-            <span className="navbar-name">HEMASUNDAR</span>
-            <span className="navbar-name">TATIPUDI</span>
-          </div>
-        )}
-      </div>
-      <ul className="navbar-links-vertical">
-        {sectionsContent.map((section) => (
-          <li key={section.id}>
-            <a
-              href={`#${section.id}`}
-              title={!expanded ? section.title : undefined}
-            >
-              <span className="nav-icon">{section.icon}</span>
-              <span className="nav-label">{section.title}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <button
-        className="dark-toggle"
-        onClick={() => setDarkMode((d) => !d)}
-        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        {darkMode ? <FaSun /> : <FaMoon />}
-      </button>
-      <button
-        className="nav-toggle nav-toggle-bottom"
-        onClick={() => setExpanded((e) => !e)}
-        aria-label={expanded ? "Collapse sidebar" : "Expand sidebar"}
-      >
-        {expanded ? <FaAngleDoubleLeft /> : <FaAngleDoubleRight />}
-      </button>
-    </nav>
-  );
-}
+import Navbar from "./components/Navbar";
+import AboutPage from "./pages/AboutPage";
+import ResumePage from "./pages/ResumePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ExperiencePage from "./pages/ExperiencePage";
+import EducationPage from "./pages/EducationPage";
+import CertificationsPage from "./pages/CertificationsPage";
+import SkillsPage from "./pages/SkillsPage";
+import ContactPage from "./pages/ContactPage";
 
 function Section({ id, title, children }) {
   return (
@@ -94,6 +18,57 @@ function Section({ id, title, children }) {
       <h2>{title}</h2>
       <div>{children}</div>
     </section>
+  );
+}
+
+function Home(props) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+
+  const sectionToPage = {
+    about: "/about",
+    resume: "/resume",
+    projects: "/projects",
+    experience: "/experience",
+    education: "/education",
+    certifications: "/certifications",
+    skills: "/skills",
+    contact: "/contact"
+  };
+
+  return (
+    <div className="App">
+      <Navbar {...props} />
+      <div className={`main-vertical-container${props.isMobile ? " mobile" : ""}`}>
+        <main>
+          {sectionsContent.map((section) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className="section about-clickable-tile"
+              onClick={() => navigate(sectionToPage[section.id] || "/")}
+              style={{ cursor: "pointer" }}
+              tabIndex={0}
+              onKeyDown={e => (e.key === "Enter" ? navigate(sectionToPage[section.id] || "/") : null)}
+              aria-label={`Go to ${section.title} Page`}
+            >
+              <h2>{section.title}</h2>
+              <div>{section.content}</div>
+            </section>
+          ))}
+        </main>
+      </div>
+    </div>
   );
 }
 
@@ -112,30 +87,32 @@ function App() {
     if (!isMobile && window.innerWidth > 900) setExpanded(false);
   }, [isMobile]);
 
-  // Add dark or light class to root
   useEffect(() => {
     document.body.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
+  const navProps = {
+    expanded,
+    setExpanded,
+    darkMode,
+    setDarkMode,
+    isMobile,
+  };
+
   return (
-    <div className="App">
-      <Navbar
-        expanded={expanded}
-        setExpanded={setExpanded}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        isMobile={isMobile}
-      />
-      <div className={`main-vertical-container${isMobile ? " mobile" : ""}`}>
-        <main>
-          {sectionsContent.map((section) => (
-            <Section key={section.id} id={section.id} title={section.title}>
-              {section.content}
-            </Section>
-          ))}
-        </main>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home {...navProps} />} />
+        <Route path="/about" element={<AboutPage navProps={navProps} />} />
+        <Route path="/resume" element={<ResumePage navProps={navProps} />} />
+        <Route path="/projects" element={<ProjectsPage navProps={navProps} />} />
+        <Route path="/experience" element={<ExperiencePage navProps={navProps} />} />
+        <Route path="/education" element={<EducationPage navProps={navProps} />} />
+        <Route path="/certifications" element={<CertificationsPage navProps={navProps} />} />
+        <Route path="/skills" element={<SkillsPage navProps={navProps} />} />
+        <Route path="/contact" element={<ContactPage navProps={navProps} />} />
+      </Routes>
+    </Router>
   );
 }
 
