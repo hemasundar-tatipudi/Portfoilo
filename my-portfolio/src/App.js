@@ -4,7 +4,48 @@ import logo from "./assets/logo.svg";
 import sectionsContent from "./sections";
 import { FaAngleDoubleRight, FaAngleDoubleLeft, FaMoon, FaSun } from "react-icons/fa";
 
-function Navbar({ expanded, setExpanded, darkMode, setDarkMode }) {
+function Navbar({ expanded, setExpanded, darkMode, setDarkMode, isMobile }) {
+  if (isMobile) {
+    // Mobile picklist navbar
+    return (
+      <div className="mobile-nav-dropdown">
+        <div className="mobile-nav-logo-block">
+          <img src={logo} alt="Logo" className="mobile-nav-logo" />
+          <div className="mobile-navbar-name-block">
+            <span className="mobile-navbar-name">HEMASUNDAR</span>
+            <span className="mobile-navbar-name">TATIPUDI</span>
+          </div>
+        </div>
+        <select
+          className="mobile-nav-select"
+          onChange={e => {
+            const id = e.target.value;
+            const section = document.getElementById(id);
+            if (section) section.scrollIntoView({ behavior: "smooth" });
+          }}
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select section…
+          </option>
+          {sectionsContent.map(section => (
+            <option key={section.id} value={section.id}>
+              {section.title}
+            </option>
+          ))}
+        </select>
+        <button
+          className="dark-toggle mobile-dark-toggle"
+          onClick={() => setDarkMode(d => !d)}
+          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
+      </div>
+    );
+  }
+
+  // Desktop sidebar navbar
   return (
     <nav className={`navbar-vertical${expanded ? " expanded" : ""}`}>
       <div className="logo-title-vertical">
@@ -29,7 +70,6 @@ function Navbar({ expanded, setExpanded, darkMode, setDarkMode }) {
           </li>
         ))}
       </ul>
-      {/* Dark Mode Toggle */}
       <button
         className="dark-toggle"
         onClick={() => setDarkMode((d) => !d)}
@@ -37,7 +77,6 @@ function Navbar({ expanded, setExpanded, darkMode, setDarkMode }) {
       >
         {darkMode ? <FaSun /> : <FaMoon />}
       </button>
-      {/* Expand/Collapse Toggle */}
       <button
         className="nav-toggle nav-toggle-bottom"
         onClick={() => setExpanded((e) => !e)}
@@ -61,16 +100,17 @@ function Section({ id, title, children }) {
 function App() {
   const [expanded, setExpanded] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 900) setExpanded(true);
-      else setExpanded(false);
-    };
-    handleResize();
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (!isMobile && window.innerWidth > 900) setExpanded(false);
+  }, [isMobile]);
 
   // Add dark or light class to root
   useEffect(() => {
@@ -84,8 +124,9 @@ function App() {
         setExpanded={setExpanded}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
+        isMobile={isMobile}
       />
-      <div className="main-vertical-container">
+      <div className={`main-vertical-container${isMobile ? " mobile" : ""}`}>
         <main>
           {sectionsContent.map((section) => (
             <Section key={section.id} id={section.id} title={section.title}>
