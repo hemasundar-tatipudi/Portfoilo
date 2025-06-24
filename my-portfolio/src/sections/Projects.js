@@ -2,11 +2,13 @@
 export default (
   <ul>
     <li>
-      <strong>CovidStat Visualizer:</strong> Interactive COVID-19 analytics dashboard.&nbsp;
-      <a href="https://github.com/hemasundar-tatipudi/CovidStat-Visualizer" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
+      <strong>CovidStat Visualizer:</strong> Interactive COVID-19 dashboard using D3.js & React.
     </li>
-    {/* Add more projects */}
+    <li>
+      <strong>StockWave:</strong> Stock forecasting with LSTM & real-time prediction APIs.
+    </li>
+    <li>
+      <strong>Book Store Web App:</strong> Full-stack e-commerce with secure authentication.
+    </li>
   </ul>
 );

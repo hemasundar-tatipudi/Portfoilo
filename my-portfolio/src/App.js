@@ -12,6 +12,7 @@ import CertificationsPage from "./pages/CertificationsPage";
 import SkillsPage from "./pages/SkillsPage";
 import ContactPage from "./pages/ContactPage";
 
+// Section function
 function Section({ id, title, children }) {
   return (
     <section id={id} className="section">
@@ -21,6 +22,7 @@ function Section({ id, title, children }) {
   );
 }
 
+// Home component: Resume always comes after About Me
 function Home(props) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,37 +37,32 @@ function Home(props) {
     }
   }, [location]);
 
-  const sectionToPage = {
-    about: "/about",
-    resume: "/resume",
-    projects: "/projects",
-    experience: "/experience",
-    education: "/education",
-    certifications: "/certifications",
-    skills: "/skills",
-    contact: "/contact"
-  };
-
   return (
     <div className="App">
       <Navbar {...props} />
       <div className={`main-vertical-container${props.isMobile ? " mobile" : ""}`}>
         <main>
-          {sectionsContent.map((section) => (
-            <section
-              key={section.id}
-              id={section.id}
-              className="section about-clickable-tile"
-              onClick={() => navigate(sectionToPage[section.id] || "/")}
-              style={{ cursor: "pointer" }}
-              tabIndex={0}
-              onKeyDown={e => (e.key === "Enter" ? navigate(sectionToPage[section.id] || "/") : null)}
-              aria-label={`Go to ${section.title} Page`}
-            >
-              <h2>{section.title}</h2>
-              <div>{section.content}</div>
-            </section>
-          ))}
+          {sectionsContent.map((section) =>
+            section.id === "resume" ? (
+              <Section key={section.id} id={section.id} title={section.title}>
+                {section.content}
+              </Section>
+            ) : (
+              <section
+                key={section.id}
+                id={section.id}
+                className="section about-clickable-tile"
+                onClick={() => navigate(`/${section.id}`)}
+                style={{ cursor: "pointer" }}
+                tabIndex={0}
+                onKeyDown={e => (e.key === "Enter" ? navigate(`/${section.id}`) : null)}
+                aria-label={`Go to ${section.title} Page`}
+              >
+                <h2>{section.title}</h2>
+                <div>{section.content}</div>
+              </section>
+            )
+          )}
         </main>
       </div>
     </div>

@@ -522,3 +522,218 @@ body.dark .mobile-nav-select option {
   60% { opacity: 0.5; }
   100% { opacity: 0; }
 }
+
+/* ExperiencePage.js */
+
+/* EXPERIENCE */
+
+.exp3-page-container {
+  max-width: 1500px;
+  margin: 2em auto 0 auto;
+  min-height: 100vh;
+  padding-bottom: 0em;
+  position: relative;
+  transform: scale(0.75);
+  transform-origin: top center;
+  overflow: hidden;
+}
+.exp3-title {
+  text-align: center;
+  font-size: 2.7em;
+  font-weight: 900;
+  margin-bottom: 3em;
+  letter-spacing: 0.01em;
+}
+.exp3-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+.exp3-row {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  margin-bottom: 2.5em;
+  position: relative;
+  z-index: 1;
+  min-height: 112px;
+}
+.exp3-col {
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exp3-col-left,
+.exp3-col-right {
+  width: 100%;
+  min-width: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.exp3-col-right {
+  justify-content: flex-start;
+}
+.exp3-card {
+  background: #fff;
+  border-radius: 1.2em;
+  box-shadow: 0 1px 8px rgba(50,60,80,0.09);
+  padding: 2em 2.2em 1.5em 2.2em;
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.exp3-company {
+  color: #7a6cff;
+  font-weight: 700;
+  font-size: 1.13em;
+  margin-bottom: 0.7em;
+}
+.exp3-card ul {
+  padding-left: 1.2em;
+  margin: 0.8em 0 0 0;
+}
+.exp3-card li {
+  margin-bottom: 0.6em;
+  font-size: 1.05em;
+}
+.exp3-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 60px;
+  min-width: 38px;
+  z-index: 2;
+}
+.exp3-logo-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+}
+.exp3-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 1px 4px rgba(60,80,110,0.13);
+  border: 2.5px solid #ffffff;
+  z-index: 2;
+}
+.exp3-date {
+  color: #5b6373;
+  font-size: 1.13em;
+  font-weight: 600;
+  text-align: center;
+  min-width: 46px;
+  margin: 0 0.75em;
+  white-space: nowrap;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.exp3-date-right {
+  justify-content: flex-start;
+  margin-left: 0.15em;
+}
+.exp3-date-left {
+  justify-content: flex-end;
+  margin-right: 0.15em;
+}
+/* Timeline line */
+.exp3-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #9da1a6;
+  z-index: 0;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+/* ----------- MOBILE/TABLET ------------- */
+@media (max-width: 850px) {
+  .exp3-page-container {
+    transform: none !important;
+    max-width: 99vw;
+    min-height: unset;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+  }
+  .exp3-timeline-line {
+    display: none !important;
+  }
+  .exp3-row {
+    grid-template-columns: 1fr !important;
+    margin-bottom: 2.2em;
+  }
+  .exp3-col-center { display: none !important; }
+  .exp3-col-left, .exp3-col-right {
+    justify-content: center !important;
+    min-width: unset;
+    width: 100%;
+    padding: 0;
+  }
+  .exp3-card-group-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .exp3-card {
+    width: 90vw;
+    min-width: unset;
+    max-width: 90vw;
+    padding: 1.2em 1em;
+    margin: 0.5em auto 1.4em auto;
+    box-sizing: border-box;
+    border-radius: 1em;
+  }
+  .exp3-title { font-size: 2em; margin-bottom: 2em;}
+  .exp3-date {
+    min-width: unset;
+    margin: 0 0 0.5em 0;
+    font-size: 1.1em;
+    justify-content: center !important;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .exp3-title { font-size: 1.4em; }
+  .exp3-card {
+    font-size: 0.98em;
+    width: 97vw;
+    padding: 1em 0.6em;
+    margin: 0.5em auto 1em auto;
+  }
+}
+
+/* DARK MODE */
+body.dark .exp3-card {
+  background: #23242b;
+  color: #e5eaf4;
+  box-shadow: 0 1px 8px rgba(20,30,40,0.17);
+}
+body.dark .exp3-timeline-line {
+  background: #30344d;
+}
+body.dark .exp3-logo {
+  background: #23242b;
+  border: 2.5px solid #63ffe4;
+}
+body.dark .exp3-company {
+  color: #68e6ff;
+}
+body.dark .exp3-date {
+  color: #a4b7ca;
+}

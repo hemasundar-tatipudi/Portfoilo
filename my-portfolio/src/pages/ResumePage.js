@@ -1,21 +1,26 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 
-export default function ResumePage({ navProps }) {
+export default function ResumePage() {
   return (
-    <div className="App">
-      <Navbar {...navProps} />
-      <div className={`main-vertical-container${navProps.isMobile ? " mobile" : ""}`}>
-        <div className="about-page-container">
-          <h1>Resume</h1>
-          <p>
-            {/* Simple download link; you can embed PDF instead if you want */}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              View My Resume (PDF)
-            </a>
-          </p>
-        </div>
-      </div>
+    <div style={{
+      width: "100vw",
+      height: "100vh",
+      margin: 0,
+      padding: 0,
+      background: "#181a20"
+    }}>
+      <iframe
+        src="/resume.pdf"
+        title="Resume PDF"
+        width="100%"
+        height="100%"
+        style={{
+          border: "none",
+          minHeight: "100vh",
+          minWidth: "100vw",
+          background: "#181a20"
+        }}
+      />
     </div>
   );
 }

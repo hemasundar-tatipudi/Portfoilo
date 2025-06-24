@@ -1,7 +1,13 @@
 // src/sections/Skills.js
 export default (
   <ul>
-    <li>Python, Java, JavaScript, Salesforce, Node.js, React, ML, DevOps, APIs</li>
-    {/* Add more if you wish */}
+    <li>
+      <strong>Languages:</strong> Python, Java, JavaScript, C++</li>
+    <li>
+      <strong>Frameworks:</strong> React, Salesforce, Machine Learning
+    </li>
+    <li>
+      <strong>Tools:</strong> Azure DevOps, AWS, Git, Docker
+    </li>
   </ul>
 );

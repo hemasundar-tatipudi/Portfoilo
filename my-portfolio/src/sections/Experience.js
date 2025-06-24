@@ -2,9 +2,9 @@
 export default (
   <ul>
     <li>
-      <strong>Software Engineer, Capgemini</strong> (2.5 years) <br />
-      Developed Salesforce solutions, backend services, and contributed to full-stack projects.
+      <strong>Capgemini – Salesforce Developer</strong>
+      <br />
+      Automated CI/CD pipelines, built custom applications, and optimized database queries. Consistently surpassed performance targets and collaborated on cross-functional teams.
     </li>
-    {/* Add more experiences */}
   </ul>
 );

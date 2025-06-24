@@ -2,7 +2,6 @@
 export default (
   <ul>
     <li>Salesforce Certified Administrator</li>
-    <li>Salesforce Platform Developer I</li>
-    {/* Add more */}
+    <li>Salesforce Certified Platform Developer I</li>
   </ul>
 );
