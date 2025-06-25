@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import capgeminiLogo from "../assets/capgemini-logo.png";
 import brainweaveLogo from "../assets/brainweave-logo.png";
@@ -60,6 +60,11 @@ const experiences = [
 ];
 
 export default function ExperiencePage({ navProps }) {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const isMobile = useIsMobile();
   // Most recent first
   const ordered = experiences.slice();
