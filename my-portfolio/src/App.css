@@ -992,7 +992,7 @@ body.dark .exp3-edu-label {
   font-size: 0.99em;
   font-weight: 600;
   box-shadow: 0 1px 4px rgba(60,110,140,0.04);
-  transition: background 0.15s, color 0.15s, transform 0.13s;
+  transition: background 0.15s, color 0.15s, transform 0.13s, opacity 0.16s;
   cursor: pointer;
 }
 .project-skill-badge:hover {
@@ -1000,6 +1000,19 @@ body.dark .exp3-edu-label {
   color: #0a3840;
   transform: scale(1.08);
 }
+/* Disabled/active skill chip for filtered skill */
+.project-skill-badge.active {
+  background: #e8eaf3 !important;
+  color: #b1b6d1 !important;
+  cursor: default !important;
+  pointer-events: none;
+  opacity: 0.55;
+}
+body.dark .project-skill-badge.active {
+  background: #22263b !important;
+  color: #6f758c !important;
+}
+
 .project-card-description {
   margin: 0.4em 0 0.7em 1em;
   font-size: 1.05em;
@@ -1048,7 +1061,6 @@ body.dark .exp3-edu-label {
   }
 }
 
-/* ---- DARK MODE ---- */
 body.dark .projects-page-container,
 body.dark .project-card.no-image {
   background: #181a21;
@@ -1072,7 +1084,7 @@ body.dark .projects-skill-chip {
   background: #2a2d3a;
   color: #6ad6e7;
 }
-body.dark .projects-skill-chip.selected {
+.body.dark .projects-skill-chip.selected {
   background: linear-gradient(90deg,#55b9e6,#9bffe6);
   color: #244c5a;
 }

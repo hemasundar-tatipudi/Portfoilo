@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: "Book Store Web App",
-    skills: ["Node.js", "MongoDB", "React"],
+    skills: ["Node.js", "MongoDB", "React.js"],
     description: [
       "Full-stack e-commerce site with secure JWT authentication, role-based access, and debounced search/filter over 1,000+ titles.",
       "Designed RESTful APIs and a responsive React UI with an admin dashboard for real-time inventory and order management.",
@@ -47,7 +47,7 @@ const allSkills = Array.from(
   new Set(projects.flatMap((p) => p.skills))
 ).sort();
 
-function ProjectCard({ project, idx }) {
+function ProjectCard({ project, idx, onSkillClick, selectedSkills }) {
   return (
     <div
       className="project-card no-image"
@@ -57,11 +57,26 @@ function ProjectCard({ project, idx }) {
       <div className="project-card-content">
         <h2 className="project-card-title">{project.title}</h2>
         <div className="project-card-skills">
-          {project.skills.map((skill, i) => (
-            <span className="project-skill-badge" key={i}>
-              {skill}
-            </span>
-          ))}
+          {project.skills.map((skill, i) => {
+            const isActive = selectedSkills.includes(skill);
+            return (
+              <span
+                className={
+                  "project-skill-badge" + (isActive ? " active" : "")
+                }
+                key={i}
+                onClick={() => !isActive && onSkillClick(skill)}
+                style={{
+                  cursor: isActive ? "default" : "pointer",
+                  opacity: isActive ? 0.55 : 1,
+                  pointerEvents: isActive ? "none" : "auto",
+                }}
+                title={isActive ? "Already filtered" : "Filter by skill"}
+              >
+                {skill}
+              </span>
+            );
+          })}
         </div>
         <ul className="project-card-description">
           {project.description.map((desc, i) => (
@@ -120,9 +135,11 @@ export default function ProjectsPage({ navProps }) {
   );
 
   const addSkill = (skill) => {
-    setSelectedSkills((prev) => [...prev, skill]);
-    setPicklist("");
-    setIsOpen(false);
+    if (!selectedSkills.includes(skill)) {
+      setSelectedSkills((prev) => [...prev, skill]);
+      setPicklist("");
+      setIsOpen(false);
+    }
   };
   const removeSkill = (skill) => {
     setSelectedSkills((prev) => prev.filter((s) => s !== skill));
@@ -201,7 +218,13 @@ export default function ProjectsPage({ navProps }) {
               </div>
             ) : (
               filteredProjects.map((project, idx) => (
-                <ProjectCard project={project} idx={idx} key={project.title} />
+                <ProjectCard
+                  project={project}
+                  idx={idx}
+                  key={project.title}
+                  onSkillClick={addSkill}
+                  selectedSkills={selectedSkills}
+                />
               ))
             )}
           </div>
