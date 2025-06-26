@@ -4,7 +4,9 @@ export default (
     <li>
       <strong>Capgemini – Salesforce Developer</strong>
       <br />
-      Automated CI/CD pipelines, built custom applications, and optimized database queries. Consistently surpassed performance targets and collaborated on cross-functional teams.
+      Deployment & DevOps Optimization, Automation & Efficiency Gains, Issue Resolution & Support, 
+      Full-Stack Salesforce Development, API Development & Integration, Database Management, Agile Development & 
+      Collaboration, Testing & Code Quality, Performance Optimization, Cross-Functional Collaboration.
     </li>
   </ul>
 );

@@ -27,6 +27,16 @@ function Home(props) {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Tooltip text for each section (customize as needed)
+  const sectionTooltips = {
+    about: "Learn more about me!",
+    projects: "Explore my technical projects & code.",
+    experience: "See my work experience & professional roles.",
+    education: "Review my academic background.",
+    certifications: "View my certifications & Verify my credentials.",
+    skills: "Browse my programming languages, frameworks, and tools.",
+  };
+
   useEffect(() => {
     if (location.state && location.state.scrollTo) {
       const section = document.getElementById(location.state.scrollTo);
@@ -58,6 +68,10 @@ function Home(props) {
                 onKeyDown={e => (e.key === "Enter" ? navigate(`/${section.id}`) : null)}
                 aria-label={`Go to ${section.title} Page`}
               >
+                {/* Tooltip */}
+                <span className="homepage-tooltip">
+                  {sectionTooltips[section.id]}
+                </span>
                 <h2>{section.title}</h2>
                 <div>{section.content}</div>
               </section>

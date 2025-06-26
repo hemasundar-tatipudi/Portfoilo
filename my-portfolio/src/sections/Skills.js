@@ -2,12 +2,13 @@
 export default (
   <ul>
     <li>
-      <strong>Languages:</strong> Python, Java, JavaScript, C++</li>
+      <strong>Programming:</strong> Python, Java, C++, C, HTML, CSS, JavaScript, TypeScript, Apex</li>
     <li>
-      <strong>Frameworks:</strong> React, Salesforce, Machine Learning
+      <strong>Frameworks:</strong> Salesforce, Pega, Machine Learning, AngularJS, React.js
     </li>
     <li>
-      <strong>Tools:</strong> Azure DevOps, AWS, Git, Docker
+      <strong>Tools/Others:</strong> Azure DevOps, Azure CI/CD, Postman, AWS S3, Git, Docker, MySQL, MongoDB, Workbench,
+ServiceNow
     </li>
   </ul>
 );
