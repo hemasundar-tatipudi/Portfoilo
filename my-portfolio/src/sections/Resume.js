@@ -1,27 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFilePdf } from "react-icons/fa";
+import "./Resume.css";
 
 export default (
-  <div>
-    <p>
+  <div className="resume-btn-center">
+    <div className="resume-tooltip-container">
       <Link
         to="/resume"
         target="_blank"
         rel="noopener noreferrer"
-        style={{
-          display: "inline-block",
-          padding: "0.7em 1.2em",
-          background: "#3578e5",
-          color: "#fff",
-          borderRadius: "0.5em",
-          fontWeight: 600,
-          textDecoration: "none",
-          marginTop: "0.7em",
-          transition: "background 0.17s"
-        }}
+        aria-label="View Full Resume (PDF)"
+        className="resume-pdf-link"
       >
-        View Full Resume
+        <FaFilePdf className="resume-pdf-icon" />
       </Link>
-    </p>
+      <span className="resume-tooltip">View Full Resume (PDF)</span>
+    </div>
   </div>
 );

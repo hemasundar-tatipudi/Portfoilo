@@ -1,0 +1,85 @@
+.resume-btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.7em;
+}
+
+/* Tooltip container wraps the icon and the tooltip text */
+.resume-tooltip-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-pdf-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 50%;
+  padding: 0.35em;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.19s cubic-bezier(0.54,1.7,0.7,1.01), box-shadow 0.17s;
+  outline: none;
+}
+
+.resume-pdf-link:focus-visible {
+  box-shadow: 0 0 0 3px #eb4d4b50;
+}
+
+.resume-pdf-link:hover .resume-pdf-icon,
+.resume-pdf-link:focus .resume-pdf-icon {
+  animation: pdf-bounce 0.48s;
+  filter: drop-shadow(0 2px 12px #e85d5d44);
+  transform: scale(1.18) rotate(-4deg);
+}
+
+.resume-pdf-icon {
+  font-size: 2.65em;
+  color: #e2574c;
+  transition: transform 0.16s, filter 0.14s;
+}
+
+/* Tooltip styles */
+.resume-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background: #353a47;
+  color: #fff;
+  font-size: 0.75em;
+  padding: 0.53em 1.05em;
+  border-radius: 0.7em;
+  position: absolute;
+  bottom: -2.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 22;
+  box-shadow: 0 2px 8px rgba(40,60,80,0.16);
+  pointer-events: none;
+  transition: opacity 0.15s cubic-bezier(.39,1.45,.69,1.04), visibility 0.14s;
+}
+
+.resume-pdf-link:hover + .resume-tooltip,
+.resume-pdf-link:focus + .resume-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .resume-pdf-icon { font-size: 2em; }
+  .resume-tooltip { font-size: 0.87em; bottom: -2.2em;}
+}
+
+/* Bounce animation */
+@keyframes pdf-bounce {
+  0%   { transform: scale(1) rotate(0deg);}
+  40%  { transform: scale(1.23) rotate(-10deg);}
+  65%  { transform: scale(0.96) rotate(6deg);}
+  100% { transform: scale(1.18) rotate(-4deg);}
+}

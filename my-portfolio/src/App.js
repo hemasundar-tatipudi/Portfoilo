@@ -10,7 +10,7 @@ import ExperiencePage from "./pages/ExperiencePage";
 import EducationPage from "./pages/EducationPage";
 import CertificationsPage from "./pages/CertificationsPage";
 import SkillsPage from "./pages/SkillsPage";
-import ContactPage from "./pages/ContactPage";
+/* import ContactPage from "./pages/ContactPage"; */
 
 // Section function
 function Section({ id, title, children }) {
@@ -43,7 +43,7 @@ function Home(props) {
       <div className={`main-vertical-container${props.isMobile ? " mobile" : ""}`}>
         <main>
           {sectionsContent.map((section) =>
-            section.id === "resume" ? (
+            section.id === "resume" || section.id === "contact" ? (
               <Section key={section.id} id={section.id} title={section.title}>
                 {section.content}
               </Section>
@@ -107,7 +107,7 @@ function App() {
         <Route path="/education" element={<EducationPage navProps={navProps} />} />
         <Route path="/certifications" element={<CertificationsPage navProps={navProps} />} />
         <Route path="/skills" element={<SkillsPage navProps={navProps} />} />
-        <Route path="/contact" element={<ContactPage navProps={navProps} />} />
+        {/* <Route path="/contact" element={<ContactPage navProps={navProps} />} /> */}
       </Routes>
     </Router>
   );

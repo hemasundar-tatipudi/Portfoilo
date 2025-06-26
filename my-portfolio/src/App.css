@@ -327,6 +327,7 @@ main {
 }
 
 .section h2 {
+  text-align: center;
   color: #353a47;
   margin-bottom: 0.8em;
   font-size: 2em;
@@ -1350,4 +1351,291 @@ body.dark .skills3-chip:hover, body.dark .skills3-chip:focus {
 }
 body.dark .skills-no-match {
   color: #ff8484;
+}
+
+
+
+
+
+/* CertificationsPage.js */
+.certs-page-container {
+  max-width: 1200px;
+  margin: 2.5em auto 0 auto;
+  padding: 0 1em 3em;
+}
+.certs-title {
+  font-size: 2.3em;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 1.8em;
+  letter-spacing: 0.01em;
+}
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8em;
+}
+.cert-card {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 2px 12px rgba(50,60,80,0.06);
+  padding: 1.8em 1.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cert-card:hover,
+.cert-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 24px rgba(50,60,80,0.1);
+}
+.cert-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 0.6em;
+  color: #353a47;
+}
+.cert-about {
+  flex: 1;
+  font-size: 1em;
+  color: #5b6373;
+  margin-bottom: 1em;
+}
+.cert-link {
+  align-self: flex-start;
+  text-decoration: none;
+  background: #3578e5;
+  color: #fff;
+  padding: 0.6em 1em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.cert-link:hover,
+.cert-link:focus {
+  background: #2a5fb8;
+}
+
+/* Dark mode tweaks */
+body.dark .cert-card {
+  background: #23242b;
+  box-shadow: 0 2px 12px rgba(20,30,40,0.1);
+}
+body.dark .cert-title {
+  color: #63ffe4;
+}
+body.dark .cert-about {
+  color: #e5eaf4;
+}
+body.dark .cert-link {
+  background: #63ffe4;
+  color: #23232a;
+}
+body.dark .cert-link:hover,
+body.dark .cert-link:focus {
+  background: #4ad4c2;
+}
+
+
+
+
+
+/* Contact.js */
+.contact-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5em;
+  margin: 1.5em 0;
+  flex-wrap: wrap;  /* Allow icons to wrap on smaller screens */
+}
+
+.contact-card-icon {
+  font-size: 2.2em;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  min-width: 2.2em;
+  min-height: 2.2em;
+  border-radius: 1.5em;
+  background: none;
+}
+
+.contact-card-icon:hover {
+  transform: scale(1.25);
+}
+
+.contact-card-icon.github   { color: #181717; }
+.contact-card-icon.linkedin { color: #0077B5; }
+.contact-card-icon.gmail    { color: #D14836; }
+.contact-card-icon.phone    { color: #4CAF50; }
+
+.contact-card-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 0.35em 0.6em;
+  border-radius: 0.3em;
+  font-size: 0.4em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+.contact-card-icon:hover::after {
+  opacity: 1;
+}
+
+/* Responsive for tablets and below */
+@media (max-width: 900px) {
+  .contact-card-container {
+    gap: 1.5em;
+  }
+  .contact-card-icon {
+    font-size: 1.7em;
+    width: 2em;
+    height: 2em;
+    min-width: 1.7em;
+    min-height: 1.7em;
+  }
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .contact-card-container {
+    gap: 0.9em;
+    justify-content: center;
+    padding: 0 0.2em;
+  }
+  .contact-card-icon {
+    font-size: 1.3em;
+    width: 1.7em;
+    height: 1.7em;
+    min-width: 1.3em;
+    min-height: 1.3em;
+    margin-bottom: 0.3em;
+  }
+}
+
+/* For very small screens, stack vertically */
+@media (max-width: 400px) {
+  .contact-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+  }
+  .contact-card-icon {
+    margin-bottom: 0.5em;
+  }
+}
+
+
+/* AboutPage.js */
+
+.about-page-container {
+  max-width: 1200px;
+  margin: 2.7em auto 0 auto;
+  padding: 0 1.2em 3em;
+  background: transparent;   /* transparent background */
+  border-radius: 1.2em;
+  box-shadow: none;          /* optional: remove shadow */
+  min-height: 540px;
+}
+.about-profile-pic-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.2em;
+}
+.about-profile-pic {
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 14px rgba(40,60,120,0.10);
+}
+.about-card {
+  padding: 0em 2.3em 2.2em 2.3em;
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.about-name {
+  font-size: 2em;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.01em;
+  color: #1a2333;
+}
+.about-location {
+  font-size: 1.12em;
+  font-weight: 500;
+  color: #678;
+  text-align: center;
+  margin-bottom: 1.3em;
+  letter-spacing: 0.04em;
+}
+.about-body p {
+  margin-bottom: 1.18em;
+  color: #454457;
+  font-size: 1.06em;
+  line-height: 1.66;
+  text-align: justify;
+}
+@media (max-width: 900px) {
+  .about-card { padding: 0em 0.7em; }
+  .about-name { font-size: 1.32em; }
+  .about-profile-pic { width: 80px; height: 80px; margin-top: 2em;}
+  .about-body p {font-size: 0.8em;}
+}
+body.dark .about-page-container{
+  background: transparent;
+}
+body.dark .about-card {
+  background: transparent;
+  box-shadow: 0 2px 12px rgba(20,30,40,0.13);
+}
+body.dark .about-name { color: #63ffe4; }
+body.dark .about-body p { color: #e5eaf4; }
+
+/* About footer */
+
+.about-cta {
+  text-align: center;
+  font-size: 0.75em;
+  margin-top: 5em;
+  margin-bottom: 0.8em;
+  color: #6441a5;
+  font-weight: 500;
+}
+.about-cta-link {
+  color: #3578e5;
+  font-weight: 700;
+  transition: color 0.01s;
+}
+.about-cta-link:hover,
+.about-cta-link:focus {
+  color: #4ad4c2;
+}
+body.dark .about-cta {
+  color: #63ffe4;
+}
+body.dark .about-cta-link {
+  color: #63ffe4;
+}
+body.dark .about-cta-link:hover,
+body.dark .about-cta-link:focus {
+  color: #ffd686;
 }
