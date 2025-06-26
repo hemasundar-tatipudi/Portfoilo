@@ -1129,3 +1129,225 @@ body.dark .projects-picklist-dropdown li:focus {
   0% { opacity: 0; transform: translateY(40px) scale(0.97);}
   100% { opacity: 1; transform: translateY(0) scale(1);}
 }
+
+
+
+
+
+/* SkillsPage.js */
+
+/* --- Skills Page: Floating Word Cloud + Card Reveal --- */
+.skills3-page-container,
+.skills3-page-container.large {
+  max-width: 1600px;
+  margin: 2.5em auto 0 auto;
+  min-height: 75vh;
+  padding-bottom: 3em;
+  position: relative;
+}
+.skills3-title {
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 2.2em;
+  letter-spacing: 0.01em;
+}
+.skills3-cat-grid,
+.skills3-cat-grid.large {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.6em;
+  width: 100%;
+}
+.skills3-cat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  position: relative;
+  min-height: 420px;
+  transition: z-index 0.17s;
+}
+.skills3-cat-area{
+  width: 420px;
+  max-width: 100%;
+  min-width: 270px;
+  min-height: 370px;
+  height: 390px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: none;
+  border-radius: 1.2em;
+  box-shadow: none;
+  position: relative;
+  transition: box-shadow 0.22s, background 0.25s;
+  overflow: visible;
+  padding: 2.2em 1.2em 2.7em 1.2em;
+}
+.skills3-cat-area.large {
+  width: 350px;
+  max-width: 100%;
+  min-width: 270px;
+  min-height: 370px;
+  height: 390px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: none;
+  border-radius: 1.2em;
+  box-shadow: none;
+  position: relative;
+  transition: box-shadow 0.22s, background 0.25s;
+  overflow: visible;
+  padding: 2.2em 1.2em 2.7em 1.2em;
+}
+.skills3-cat-area.carded {
+  width: 350px;
+  background: var(--cat-color, #eee);
+  box-shadow: 0 2px 17px rgba(40,60,120,0.13);
+}
+.skills3-cat-title {
+  color: #1a2333;
+  font-size: 1.29em;
+  font-weight: 800;
+  margin-bottom: 5em;
+  letter-spacing: 0.03em;
+  text-align: center;
+  z-index: 4;
+}
+.skills3-cat-area.carded .skills3-cat-title {
+  color: #fff;
+  margin-bottom: 3em;
+}
+
+.skills3-floatcloud.globe3d,
+.skills3-floatcloud.globe3d.large {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.skills3-floatskill {
+  position: absolute;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 0.10em 1em;
+  border-radius: 1.2em;
+  user-select: none;
+  pointer-events: none;
+  transition: color 0.15s, filter 0.17s, opacity 0.12s, transform 0.13s;
+  background: none;
+  box-shadow: none;
+  left: 50%;
+  top: 50%;
+  will-change: left, top, transform;
+}
+
+/* Carded chips */
+.skills3-chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1em 0.63em;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 200px;
+  width: 94%;
+  animation: skills3-chip-appear 0.4s cubic-bezier(.39,1.45,.69,1.04) both;
+  pointer-events: all;
+}
+@keyframes skills3-chip-appear {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.skills3-chip {
+  background: #fff;
+  color: var(--cat-color, #624ecb);
+  font-weight: 700;
+  font-size: 1.08em;
+  border: none;
+  border-radius: 1.07em;
+  box-shadow: 0 1px 7px rgba(50,50,110,0.10);
+  padding: 0.38em 1.3em;
+  margin: 0 0.10em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.12s, box-shadow 0.11s, transform 0.13s;
+  outline: none;
+  opacity: 0;
+  animation: skills3-chip-fadein 0.45s cubic-bezier(.56,1.39,.68,1.05) both;
+  animation-delay: var(--chip-ani,0s);
+}
+.skills3-chip:hover,
+.skills3-chip:focus {
+  background: #f2f2fa;
+  color: #222;
+  transform: scale(1.08);
+  box-shadow: 0 3px 18px #b6adfd22;
+}
+@keyframes skills3-chip-fadein {
+  from { opacity: 0; transform: translateY(16px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .skills3-cat-area, .skills3-cat-area.large { width: 350px; }
+  .skills3-floatcloud.globe3d { width: 250px; height: 250px; }
+}
+@media (max-width: 1100px) {
+  .skills-no-match {
+    position: fixed;
+    top: 70px;                  /* height of your mobile navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+    background: rgba(255,255,255,0.95);
+    padding: 0.6em 1em;
+    border-radius: 0.6em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1500;
+  }
+  body.dark .skills-no-match {
+    background: rgba(30,30,40,0.9);
+    color: #ff8484;             /* keep your dark‐mode text color */
+  }
+  .skills3-cat-grid, .skills3-cat-grid.large { grid-template-columns: 1fr 1fr; gap: 2.4em 1.3em;}
+  .skills3-cat-area, .skills3-cat-area.large { width: 320px;}
+  .skills3-floatcloud.globe3d, .skills3-floatcloud.globe3d.large { display: none; width: 190px; height: 190px;}
+}
+@media (max-width: 750px) {
+  .skills3-cat-grid, .skills3-cat-grid.large { grid-template-columns: 1fr; gap: 2em 0;}
+  .skills3-cat-area, .skills3-cat-area.carded, .skills3-cat-area.large { max-width: 97vw; min-width: unset; }
+  .skills3-floatcloud.globe3d, .skills3-floatcloud.globe3d.large { display: none; width: 96vw; height: 160px; }
+}
+
+/* Dark mode tweaks */
+body.dark .skills3-cat-area.carded {
+  background: linear-gradient(115deg, #23233a 10%, #3e316b 100%);
+  box-shadow: 0 2px 17px rgba(30,44,78,0.19);
+}
+body.dark .skills3-cat-area.carded .skills3-cat-title { color: #b0f4ff; }
+body.dark .skills3-floatskill { color: #b0d3ff; }
+body.dark .skills3-chip {
+  background: #1b1d2e;
+  color: var(--cat-color, #98edff);
+}
+body.dark .skills3-chip:hover, body.dark .skills3-chip:focus {
+  background: #32214c;
+  color: #f0faff;
+}
+
+.skills-no-match {
+  text-align: center;
+  color: #ba2469;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+body.dark .skills-no-match {
+  color: #ff8484;
+}

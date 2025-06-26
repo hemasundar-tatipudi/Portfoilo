@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 
 // Project data (add 'website' as needed)
-const projects = [
+export const projects = [
   {
     title: "CovidStat Visualizer",
     skills: ["PySpark", "HTML", "CSS", "D3.js", "React.js"],
@@ -42,7 +43,7 @@ const projects = [
   },
 ];
 
-// Get unique skills for filter picklist
+// derive our full set of unique skills
 const allSkills = Array.from(
   new Set(projects.flatMap((p) => p.skills))
 ).sort();
@@ -61,10 +62,10 @@ function ProjectCard({ project, idx, onSkillClick, selectedSkills }) {
             const isActive = selectedSkills.includes(skill);
             return (
               <span
+                key={i}
                 className={
                   "project-skill-badge" + (isActive ? " active" : "")
                 }
-                key={i}
                 onClick={() => !isActive && onSkillClick(skill)}
                 style={{
                   cursor: isActive ? "default" : "pointer",
@@ -111,11 +112,31 @@ function ProjectCard({ project, idx, onSkillClick, selectedSkills }) {
 }
 
 export default function ProjectsPage({ navProps }) {
-  const [selectedSkills, setSelectedSkills] = useState([]);
+  const location = useLocation();
+
+  // Pull filterSkill from navigation state (string) and wrap in an array
+  const navSkill = location.state?.filterSkill;
+  const initialFilter = navSkill ? [navSkill] : [];
+
+  const [selectedSkills, setSelectedSkills] = useState(initialFilter);
   const [picklist, setPicklist] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  // Filter projects: must include *all* selected skills
+  // If you navigate here again with a new skill, reset the selectedSkills
+  useEffect(() => {
+    if (navSkill) {
+      setSelectedSkills([navSkill]);
+      // clear the navigation state so re-visits don't re-filter
+      window.history.replaceState({}, document.title);
+    }
+  }, [navSkill]);
+
+  // Always scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Filtered projects
   const filteredProjects = useMemo(() => {
     if (selectedSkills.length === 0) return projects;
     return projects.filter((p) =>
@@ -123,7 +144,7 @@ export default function ProjectsPage({ navProps }) {
     );
   }, [selectedSkills]);
 
-  // Filter available skills for picklist (not already selected, matches search)
+  // Available skills for picklist
   const filteredSkills = useMemo(
     () =>
       allSkills.filter(
