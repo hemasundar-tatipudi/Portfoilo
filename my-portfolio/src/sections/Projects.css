@@ -1,0 +1,39 @@
+.section-projects-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin: 1.3em 0;
+}
+
+.section-project-card {
+  background: transparent;          /* Slightly lighter than app bg */
+  border-radius: 1em;
+  box-shadow: none;
+  padding: none;
+  transition: none;
+  cursor: default;
+  border: none;
+}
+
+.section-project-title {
+  font-size: 1.16em;
+  font-weight: 700;
+  margin-bottom: 0.05em;
+  color: #6441a5;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.section-project-desc {
+  font-size: 1.04em;
+  color: #5b6373;
+  text-align: left;
+  line-height: 1.55;
+}
+
+body.dark .section-project-title {
+  color: #63ffe4;
+}
+body.dark .section-project-desc {
+  color: #d8f1ff;
+}

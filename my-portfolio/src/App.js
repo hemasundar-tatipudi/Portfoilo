@@ -51,6 +51,11 @@ function Home(props) {
     <div className="App">
       <Navbar {...props} />
       <div className={`main-vertical-container${props.isMobile ? " mobile" : ""}`}>
+        {/* 👉 Instruction Line for Home Page */}
+        <p className="home-instruct">
+          <span role="img" aria-label="pointer">👉</span>
+          Click any tile or section to explore more details!
+        </p>
         <main>
           {sectionsContent.map((section) =>
             section.id === "resume" || section.id === "contact" ? (

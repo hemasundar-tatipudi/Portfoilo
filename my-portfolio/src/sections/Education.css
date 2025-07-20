@@ -1,0 +1,43 @@
+.section-edu-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  margin: 0;
+}
+
+.section-edu-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border-radius: 0.85em;
+  padding: 0.25em 1.5em;
+  font-size: 1.08em;
+}
+
+.section-edu-degree {
+  font-weight: 900;
+  color: #555555;
+  letter-spacing: 0.01em;
+}
+.section-edu-school {
+  color: #614bf6;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+.section-edu-dates {
+  color: #8892b0;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: 0.1em;
+  min-width: 110px;
+  text-align: right;
+  white-space: nowrap;
+  align-self: flex-start;
+  letter-spacing: 0.01em;
+}
+
+
+body.dark .section-edu-degree { color: #63ffe4; }
+body.dark .section-edu-school { color: #b7d9f9; }
+body.dark .section-edu-dates { color: #76ffe9; }

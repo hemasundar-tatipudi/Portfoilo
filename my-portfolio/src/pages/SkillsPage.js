@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { projects } from "./ProjectsPage";
+import "./SkillsPage.css";
 
 // mock Projects list for filter-existence check
 const projectList = projects;
@@ -86,6 +87,9 @@ export default function SkillsPage({ navProps }) {
       <div className="main-vertical-container">
         <div className="skills3-page-container large">
           <h1 className="skills3-title">Skills</h1>
+          <p className="skills3-instruct">
+            <span role="img" aria-label="info">💡</span> Click on any skill to instantly see my relevant projects!
+          </p>
           {noMatchSkill && (
             <div className="skills-no-match">
               No projects match “{noMatchSkill}.” Please choose another skill.

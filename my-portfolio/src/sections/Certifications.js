@@ -1,9 +1,16 @@
-// src/sections/Certifications.js
+import "./Certifications.css";
+const certs = [
+  "Salesforce Certified Administrator",
+  "Certified System Architect (CSA)",
+  "Salesforce Certified Platform Developer I",
+  "Certified Senior System Architect (CSSA)"
+];
 export default (
-  <ul>
-    <li>Salesforce Certified Administrator</li>
-    <li>Salesforce Certified Platform Developer I</li>
-    <li>Certified System Architect (CSA)</li>
-    <li>Certified Senior System Architect (CSSA)</li>
+  <ul className="section-cert-columns-list">
+    {certs.map(cert => (
+      <li className="section-cert-columns-li" key={cert}>
+        <span className="section-cert-columns-text">{cert}</span>
+      </li>
+    ))}
   </ul>
 );

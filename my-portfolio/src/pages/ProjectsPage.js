@@ -7,19 +7,20 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 export const projects = [
   {
     title: "CovidStat Visualizer",
-    skills: ["PySpark", "HTML", "CSS", "D3.js", "React.js"],
+    skills: ["PySpark", "HTML", "CSS", "JavaScript", "D3.js"],
     description: [
-      "Interactive EU/EEA COVID-19 dashboard with animated charts, hover tooltips and stringency-index overlays for comparing case/death trends.",
-      "Highlighted key events (lockdowns, vaccine rollouts) via annotated peaks to inform public-health decision-making.",
+      "CovidStat Visualizer is an interactive dashboard for exploring COVID-19 cases, deaths, vaccination rates, and government responses across EU/EEA countries, with animated charts and overlays for interventions.",
+      "Users can analyze the effects of vaccination, testing, and government policies on pandemic outcomes, with annotated peaks marking key events.",
+      "The tool offers bar chart comparisons, intervention filters, and embedded screencasts, serving as a resource for policymakers and public health professionals.",
     ],
     links: {
       github: "https://github.com/dataviscourse2024/group-project-covidstat-visualizer",
-      website: "https://dataviscourse2024.github.io/group-project-covidstat-visualizer/",
-    },
+      website: "https://dataviscourse2024.github.io/group-project-covidstat-visualizer/"
+    }
   },
   {
     title: "StockWave – Dynamic Stock Forecasting",
-    skills: ["Python", "PySpark", "TensorFlow", "LSTM"],
+    skills: ["PySpark", "Machine Learning", "Python"],
     description: [
       "LSTM-based time-series model with EMA/RSI feature engineering, delivering 15% lower mean error than ARIMA baselines.",
       "Exposed via a Flask API & React frontend for real-time input, visualization of predictions vs. actuals, and on demand retraining.",
@@ -30,7 +31,7 @@ export const projects = [
     },
   },
   {
-    title: "Book Store Web App",
+    title: "Book Store",
     skills: ["Node.js", "MongoDB", "React.js"],
     description: [
       "Full-stack e-commerce site with secure JWT authentication, role-based access, and debounced search/filter over 1,000+ titles.",
@@ -41,6 +42,58 @@ export const projects = [
       website: "https://book-store-web-application.vercel.app/",
     },
   },
+  {
+    title: "Bitcoin Price Prediction",
+    skills: ["Python", "Machine Learning"],
+    description: [
+      "Bitcoin Price Prediction is a data science project that leverages historical Bitcoin market and blockchain data to forecast the market price of Bitcoin.",
+      "The project performs exploratory data analysis with visualizations, cleans and preprocesses the data, and builds a linear regression model using features such as market capitalization, transaction counts, miners' revenue, and hash rate.",
+      "After model training and evaluation, the script predicts future Bitcoin prices on a provided test set.",
+    ],
+    links: {
+      github: "https://github.com/hemasundar-tatipudi/Bitcoin-Price-Prediction",
+      website: null
+    }
+  },
+  {
+    title: "Word Cloud",
+    skills: ["Python"],
+    description: [
+      "Word-Cloud is a Python-based Jupyter Notebook application that creates a word cloud visualization from the contents of a text file.",
+      "The program processes uploaded text, removing punctuation and common stop words, and then generates a visual word cloud representing the frequency of each unique word.",
+      "Users can upload their own text files interactively using Jupyter widgets, making the process seamless and user-friendly.",
+    ],
+    links: {
+      github: "https://github.com/yourusername/Word-Cloud",
+      website: null
+    }
+  },
+  {
+    title: "Non-Preemptive SJF-Priority",
+    skills: ["C"],
+    description: [
+      "This project implements a non-preemptive CPU scheduling algorithm inspired by Shortest Job First (SJF), but enhanced with an aging-based priority calculation to prevent starvation.",
+      "Each process is assigned a priority computed as: Priority = 1 + (Waiting Time / Estimated Run Time). As waiting time increases, so does priority, allowing long-waiting jobs to be scheduled fairly.",
+      "The scheduler sorts jobs first by arrival, then applies SJF, and finally re-orders jobs based on the calculated priority before execution.",
+    ],
+    links: {
+      github: "https://github.com/hemasundar-tatipudi/Non-Preemptive-SJF_Priority",
+      website: null
+    }
+  },
+  {
+    title: "Hospital Management System",
+    skills: ["C"],
+    description: [
+      "Hospital Management System is a terminal-based C application that enables hospitals or clinics to manage patient records, including creating, updating, and viewing patient details, logging visit history, and generating appointment dates.",
+      "Each patient's data is stored in a separate text file for easy retrieval or updates by patient ID, showcasing basic file handling, user input, and record management in C.",
+    ],
+    links: {
+      github: "https://github.com/yourusername/Hospital-Management",
+      website: null
+    }
+  },
+
 ];
 
 // derive our full set of unique skills

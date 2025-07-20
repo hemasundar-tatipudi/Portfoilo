@@ -1,0 +1,41 @@
+.section-skills-chipcloud {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35em;
+  margin: 1.6em 0 1em 0;
+}
+
+.section-skills-cat {
+  margin-bottom: 0.1em;
+}
+
+.section-skills-cat-title {
+  font-weight: 900;
+  font-size: 1.08em;
+  margin-bottom: 0.55em;
+  letter-spacing: 0.01em;
+}
+
+.section-skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em 0.6em;
+}
+
+.section-skills-chip {
+  background: #eceff3;
+  color: #555555;            /* blackish/dark gray */
+  font-weight: 600;
+  font-size: 0.9em;
+  border-radius: 1.07em;
+  padding: 0.32em 1.05em;
+  margin-bottom: 0.15em;
+  box-shadow: 0 1px 5px rgba(60,60,120,0.06);
+  user-select: none;
+  border: none;
+}
+
+body.dark .section-skills-chip {
+  background: #23253a;
+  color: #e8eef7;
+}

@@ -311,7 +311,7 @@ body .navbar-vertical.expanded + .main-vertical-container {
 }
 
 main {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2.2em auto 0 auto;
   padding: 0 1em 4em 1em;
 }
@@ -322,6 +322,7 @@ main {
   border-radius: 1em;
   box-shadow: 0 1px 6px rgba(50,60,80,0.04);
   padding: 2em;
+  padding-top: 1em;
   scroll-margin-top: 2em;
   scroll-margin-left: 82px;
   transition: scroll-margin-left 0.26s cubic-bezier(.65,.05,.35,1);
@@ -346,6 +347,42 @@ a:hover {
 
 ul {
   padding-left: 1.3em;
+}
+
+.home-instruct {
+  position: sticky;
+  top: 0.25em;              /* Set this to your navbar’s height */
+  z-index: 99;
+  display: inline-block;
+  background: linear-gradient(90deg, #d9edff 40%, #b0c7fd 100%);
+  color: #2e437a;
+  font-size: 1em;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  padding: 0.3em 1.4em;
+  border-radius: 1.6em;
+  margin: 1.15em auto 1.75em auto;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 7px rgba(70, 110, 170, 0.07);
+  text-align: center;
+  user-select: none;
+  border: 1.2px solid #bdd8fe;
+  transition: background 0.17s, color 0.17s;
+}
+@media (max-width: 900px) {
+  .home-instruct {
+    top: 6em; /* smaller for mobile navbar! */
+    font-size: 0.75em; /* optionally a bit smaller on mobile */
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    margin-bottom: 1.1em;
+  }
+}
+body.dark .home-instruct {
+  background: linear-gradient(90deg, #212336 40%, #32224d 100%);
+  color: #8de2ff;
+  border: 1.2px solid #4e7fa6;
+  box-shadow: 0 1px 9px #1adad71a;
 }
 
 /* Homepage Tooltip Style */
@@ -490,6 +527,11 @@ body.dark .homepage-tooltip {
   .main-vertical-container.mobile {
     margin-left: 0 !important;
     margin-top: 70px;
+  }
+}
+@media (max-width: 420px) {
+  .mobile-nav-dropdown{
+    width: 420px;
   }
 }
 
@@ -1017,11 +1059,12 @@ body.dark .exp3-edu-label {
   height: 100%;
 }
 .project-card-title {
-  font-size: 1.25em;
+  font-size: 1.3em;
   font-weight: 700;
   margin-bottom: 0.7em;
   color: #6441a5;
   letter-spacing: 0.01em;
+  text-align: left;
 }
 .project-card-skills {
   margin-bottom: 1em;
@@ -1061,7 +1104,7 @@ body.dark .project-skill-badge.active {
 
 .project-card-description {
   margin: 0.4em 0 0.7em 1em;
-  font-size: 1.05em;
+  font-size: 0.8em;
   flex: 1 0 auto;
   color: #454457;
   padding-left: 0;
@@ -1110,6 +1153,9 @@ body.dark .project-skill-badge.active {
 body.dark .projects-page-container,
 body.dark .project-card.no-image {
   background: #181a21;
+  color: #f4f7fa;
+}
+body.dark .project-card-description {
   color: #f4f7fa;
 }
 body.dark .project-card-title {
@@ -1195,7 +1241,7 @@ body.dark .projects-picklist-dropdown li:focus {
   font-size: 2.5em;
   text-align: center;
   font-weight: 900;
-  margin-bottom: 2.2em;
+  margin-bottom: 0.25em;
   letter-spacing: 0.01em;
 }
 .skills3-cat-grid,
@@ -1377,6 +1423,7 @@ body.dark .skills3-cat-area.carded {
   background: linear-gradient(115deg, #23233a 10%, #3e316b 100%);
   box-shadow: 0 2px 17px rgba(30,44,78,0.19);
 }
+body.dark .skills3-cat-title { color: #ffffff; }
 body.dark .skills3-cat-area.carded .skills3-cat-title { color: #b0f4ff; }
 body.dark .skills3-floatskill { color: #b0d3ff; }
 body.dark .skills3-chip {
@@ -1437,6 +1484,7 @@ body.dark .skills-no-match {
 }
 .cert-title {
   font-size: 1.3em;
+  text-align: left;
   font-weight: 700;
   margin-bottom: 0.6em;
   color: #353a47;

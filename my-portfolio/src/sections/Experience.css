@@ -1,0 +1,61 @@
+.section-exp-summary-card {
+  background: transparent;
+  border-radius: 1em;
+  padding: 1.55em 1.5em 1.25em 1.5em;
+  margin: 0.6em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65em;
+}
+.section-exp-header-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+.section-exp-role {
+  font-weight: 700;
+  color: #614bf6;
+  font-size: 1.15em;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.5em;
+}
+.section-exp-company {
+  color: #5b6373;
+  font-weight: 600;
+  font-size: 1.03em;
+}
+.section-exp-dates {
+  color: #8892b0;
+  font-size: 0.98em;
+  font-weight: 500;
+  margin-top: 0.1em;
+  min-width: 110px;
+  text-align: right;
+  white-space: nowrap;
+  align-self: flex-start;
+  letter-spacing: 0.01em;
+}
+.section-exp-summary {
+  color: #444;
+  font-size: 1.05em;
+  line-height: 1.56;
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+body.dark .section-exp-summary-card {
+  background: #23242b;
+}
+body.dark .section-exp-role {
+  color: #63ffe4;
+}
+body.dark .section-exp-company {
+  color: #c6eaff;
+}
+body.dark .section-exp-dates {
+  color: #72e8f6;
+}
+body.dark .section-exp-summary {
+  color: #e5eaf4;
+}
