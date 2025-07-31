@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Coffee Machine",
-    description: 
+    description: "A browser-based virtual coffee kiosk simulator with real-time inventory management, customizable drinks, and cash collection."
   },
   {
     title: "Railway Reservation System Website",
