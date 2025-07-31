@@ -7,7 +7,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 export const projects = [
   {
     title: "CovidStat Visualizer",
-    skills: ["Python", "PySpark", "HTML", "CSS", "JavaScript", "D3.js", "Data Visualization"],
+    skills: ["Python", "PySpark", "HTML", "CSS", "JavaScript", "D3.js", "Visualization"],
     description: [
       "CovidStat Visualizer is an interactive dashboard for exploring COVID-19 cases, deaths, vaccination rates, and government responses across EU/EEA countries, with animated charts and overlays for interventions.",
       "Users can analyze the effects of vaccination, testing, and government policies on pandemic outcomes, with annotated peaks marking key events.",
@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     title: "StockWave - Dynamic Stock Forecasting and Visualization",
-    skills: ["Python", "PySpark", "Machine Learning", "Data Visualization"],
+    skills: ["Python", "PySpark", "Machine Learning", "Visualization"],
     description: [
       "Ingested and processed large-scale streaming stock data with Apache PySpark, extracting features such as historical prices, moving averages, and volatility metrics for model training.",
       "Developed and continuously retrained ML and mathematical time series models (LSTM) to predict near-term stock price movements and market trends.",
