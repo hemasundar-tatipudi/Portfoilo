@@ -7,7 +7,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 export const projects = [
   {
     title: "CovidStat Visualizer",
-    skills: ["PySpark", "HTML", "CSS", "JavaScript", "D3.js"],
+    skills: ["Python", "PySpark", "HTML", "CSS", "JavaScript", "D3.js"],
     description: [
       "CovidStat Visualizer is an interactive dashboard for exploring COVID-19 cases, deaths, vaccination rates, and government responses across EU/EEA countries, with animated charts and overlays for interventions.",
       "Users can analyze the effects of vaccination, testing, and government policies on pandemic outcomes, with annotated peaks marking key events.",
@@ -19,16 +19,17 @@ export const projects = [
     }
   },
   {
-    title: "StockWave – Dynamic Stock Forecasting",
-    skills: ["PySpark", "Machine Learning", "Python"],
+    title: "StockWave - Dynamic Stock Forecasting and Visualization",
+    skills: ["Python", "PySpark", "Machine Learning", "Time Series Analysis", "Data Visualization"],
     description: [
-      "LSTM-based time-series model with EMA/RSI feature engineering, delivering 15% lower mean error than ARIMA baselines.",
-      "Exposed via a Flask API & React frontend for real-time input, visualization of predictions vs. actuals, and on demand retraining.",
+      "Ingested and processed large-scale streaming stock data with Apache PySpark, extracting features such as historical prices, moving averages, and volatility metrics for model training.",
+      "Developed and continuously retrained ML and mathematical time series models (LSTM) to predict near-term stock price movements and market trends.",
+      "Built interactive dashboards using data visualization libraries to display forecasts, model performance, and key indicators, empowering investors with actionable insights."
     ],
     links: {
       github: null,
       website: null,
-    },
+    }
   },
   {
     title: "Book Store",
@@ -41,6 +42,58 @@ export const projects = [
       github: "https://github.com/hemasundar-tatipudi/Book_Store-Web_Application",
       website: "https://book-store-web-application.vercel.app/",
     },
+  },
+  {
+    title: "Order Management System",
+    skills: ["Salesforce", "Apex", "SOQL", "Visualforce", "Lightning Web Components", "Aura"],
+    description: [
+      "Built a full-lifecycle order flow—product selection, cart assembly, and checkout—using custom LWC components for a responsive user experience and custom objects to model orders, items, and shipments.",
+      "Implemented Apex classes and triggers for server-side order validation, inventory adjustments, and automated status updates, optimizing SOQL queries for bulk processing and enforcing security via Profiles and Permission Sets.",
+      "Designed automated order approval and notification flows with Process Builder and Flow Builder, and created interactive dashboards for real-time operational KPIs."
+    ],
+    links: {
+      github: null,
+      website: null,
+    }
+  },
+  {
+    title: "House Value Prediction",
+    skills: ["Python", "Machine Learning"],
+    description: [
+      "Gathered and preprocessed housing data—poverty percentage, student–teacher ratio, average rooms per dwelling, etc.—using pandas and NumPy to handle missing values and outliers.",
+      "Engineered new features and trained regression models (Linear Regression, Random Forest) with scikit-learn, evaluating performance using RMSE and R² metrics to select the best model.",
+      "Conducted hyperparameter tuning and visualized model predictions and feature importances with Matplotlib and Seaborn to derive insights on the key drivers of house prices."
+    ],
+    links: {
+      github: null,
+      website: null,
+    }
+  },
+  {
+    title: "Coffee Machine",
+    skills: ["HTML", "CSS", "JavaScript"],
+    description: [
+      "Coffee Machine is a single-page web app that lets users order espresso, latte, or cappuccino in small, medium, or large sizes with sugar and syrup add-ons, showing a live price calculation.",
+      "It maintains in-memory inventory of water, milk, beans, cups, sugar, and syrups, offering refill and collect-cash operations via a polished kiosk-style UI.",
+      "Interactive controls include type and size radio buttons, sugar input, syrup options, real-time price updates, and alerts for low stock or successful brew, making it ideal for showcasing vanilla JS and DOM manipulation skills."
+    ],
+    links: {
+      github: "https://github.com/hemasundar-tatipudi/Coffee-Machine/",
+      website: "https://coffee-machine-preview.vercel.app/"
+    }
+  },
+  {
+    title: "Railway Reservation System Website",
+    skills: ["HTML", "CSS", "JavaScript"],
+    description: [
+      "Developed a responsive web interface for searching trains, selecting routes, and booking tickets with passenger details and seat preferences.",
+      "Implemented trip planning features to view upcoming journeys, past bookings, and generate printable e-tickets using client-side storage.",
+      "Simulated live train status checks and dynamic seat availability using static data and JavaScript timers for real-time-like feedback."
+    ],
+    links: {
+      github: null,
+      website: null,
+    }
   },
   {
     title: "Bitcoin Price Prediction",
@@ -91,6 +144,19 @@ export const projects = [
     links: {
       github: "https://github.com/yourusername/Hospital-Management",
       website: null
+    }
+  },
+  {
+    title: "Ice Cream Parlor",
+    skills: ["C++"],
+    description: [
+      "Implemented a menu-driven interface to handle ice cream sales—letting users choose flavors, sizes, and quantities—with real-time price calculations and receipt generation.",
+      "Built inventory management using classes to track stock levels, enable restocking operations, and alert when ingredients run low.",
+      "Persisted transaction history and inventory data to a local text file for session continuity, employing robust file I/O and error handling."
+    ],
+    links: {
+      github: null,
+      website: null,
     }
   },
 
