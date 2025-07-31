@@ -7,7 +7,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 export const projects = [
   {
     title: "CovidStat Visualizer",
-    skills: ["Python", "PySpark", "HTML", "CSS", "JavaScript", "D3.js"],
+    skills: ["Python", "PySpark", "HTML", "CSS", "JavaScript", "D3.js", "Data Visualization"],
     description: [
       "CovidStat Visualizer is an interactive dashboard for exploring COVID-19 cases, deaths, vaccination rates, and government responses across EU/EEA countries, with animated charts and overlays for interventions.",
       "Users can analyze the effects of vaccination, testing, and government policies on pandemic outcomes, with annotated peaks marking key events.",
@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     title: "StockWave - Dynamic Stock Forecasting and Visualization",
-    skills: ["Python", "PySpark", "Machine Learning", "Time Series Analysis", "Data Visualization"],
+    skills: ["Python", "PySpark", "Machine Learning", "Data Visualization"],
     description: [
       "Ingested and processed large-scale streaming stock data with Apache PySpark, extracting features such as historical prices, moving averages, and volatility metrics for model training.",
       "Developed and continuously retrained ML and mathematical time series models (LSTM) to predict near-term stock price movements and market trends.",
@@ -45,9 +45,9 @@ export const projects = [
   },
   {
     title: "Order Management System",
-    skills: ["Salesforce", "Apex", "SOQL", "Visualforce", "Lightning Web Components", "Aura"],
+    skills: ["Salesforce", "Apex", "SOQL", "Visualforce", "LWC", "Aura"],
     description: [
-      "Built a full-lifecycle order flow—product selection, cart assembly, and checkout—using custom LWC components for a responsive user experience and custom objects to model orders, items, and shipments.",
+      "Built a full-lifecycle order flow—product selection, cart assembly, and checkout—using custom Lightning Web Components (LWC) for a responsive user experience and custom objects to model orders, items, and shipments.",
       "Implemented Apex classes and triggers for server-side order validation, inventory adjustments, and automated status updates, optimizing SOQL queries for bulk processing and enforcing security via Profiles and Permission Sets.",
       "Designed automated order approval and notification flows with Process Builder and Flow Builder, and created interactive dashboards for real-time operational KPIs."
     ],
