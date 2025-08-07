@@ -2,7 +2,7 @@
 import "./About.css";
 
 const about = [
-  "Software Engineer with 2.5+ years’ experience in backend, cloud, and Salesforce development. Proven track record of automating CI/CD pipelines (80% faster deployments), integrating scalable APIs, and building robust full-stack web solutions in Python, Java, and JavaScript. Adept at database optimization and cross-functional collaboration to deliver business impact."
+  "Software Engineer with more than 3 years of hands-on delivery across back-end, front-end, and cloud-native applications. Proficient in designing and implementing end-to-end solutions using Java, Python, JavaScript/TypeScript, and modern frameworks (Spring Boot, React.js, Angular). Skilled at architecting RESTful APIs, optimizing databases (SQL/NoSQL), and automating CI/CD pipelines on AWS and Azure. Adept in full-stack development from responsive UIs to scalable microservices while collaborating cross-functionally to translate business requirements into robust, maintainable code. Continuous learner with in Computer Science and Salesforce certifications, committed to delivering high-quality, impactful software."
   // Add another paragraph as a string here when ready!
 ];
 
