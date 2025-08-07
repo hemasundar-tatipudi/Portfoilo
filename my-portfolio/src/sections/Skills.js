@@ -20,7 +20,7 @@ const skillsData = [
     category: "Tools/Others",
     color: "#ff9900",
     skills: [
-      "Docker", "Azure DevOps", "CI/CD pipelines", "AWS S3", "Git", "Postman", "Linux", "MySQL", "MongoDB", "Redis", "Salesforce Workbench", "ServiceNow",
+      "Docker", "Azure DevOps", "CI/CD pipelines", "AWS S3", "Git", "Postman", "Linux", "MySQL", "MongoDB", "Redis", "ServiceNow", "Salesforce Workbench",
     ]
   }
 ];
