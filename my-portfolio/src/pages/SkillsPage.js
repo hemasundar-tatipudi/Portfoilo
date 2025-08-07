@@ -8,9 +8,9 @@ import "./SkillsPage.css";
 const projectList = projects;
 
 const skillsData = [
-  { category: "Programming",   color: "#7a6cff",   skills: ["Python","Java","C++","C","HTML","CSS","JavaScript","TypeScript","Apex"] },
-  { category: "Frameworks",    color: "#36c1be",   skills: ["Salesforce","Pega","Machine Learning","AngularJS","React.js"] },
-  { category: "Tools/Others",  color: "#ffa252",   skills: ["Azure DevOps","Azure CI/CD","Postman","AWS S3","Git","Docker","MySQL","MongoDB","Workbench","ServiceNow"] },
+  { category: "Programming",   color: "#7a6cff",   skills: ["Python", "Java", "C++", "C", "C#", "JavaScript", "TypeScript", "HTML", "CSS", "Apex", "SOQL", "SOSL"] },
+  { category: "Frameworks",    color: "#36c1be",   skills: ["React.js", "AngularJS", "Next.js", "Spring Boot", "Redux", "Tailwind CSS", "Machine Learning", "REST APIs", "GraphQL", "WebSockets", "Swagger"] },
+  { category: "Tools/Others",  color: "#ffa252",   skills: ["Docker", "Azure DevOps", "CI/CD pipelines", "AWS S3", "Git", "Postman", "Linux", "MySQL", "MongoDB", "Redis", "Salesforce Workbench", "ServiceNow"] },
 ];
 
 // 3D-sphere coords with 45° X-tilt

@@ -6,22 +6,21 @@ const skillsData = [
     category: "Programming",
     color: "#614bf6",
     skills: [
-      "Python", "Java", "C++", "C", "HTML", "CSS", "JavaScript", "TypeScript", "Apex"
+      "Python", "Java", "C++", "C", "C#", "JavaScript", "TypeScript", "HTML", "CSS", "Apex", "SOQL", "SOSL",
     ]
   },
   {
     category: "Frameworks",
     color: "#13bcaa",
     skills: [
-      "Salesforce", "Pega", "Machine Learning", "AngularJS", "React.js"
+      "React.js", "AngularJS", "Next.js", "Spring Boot", "Redux", "Tailwind CSS", "Machine Learning", "REST APIs", "GraphQL", "WebSockets", "Swagger",
     ]
   },
   {
     category: "Tools/Others",
     color: "#ff9900",
     skills: [
-      "Azure DevOps", "Azure CI/CD", "Postman", "AWS S3", "Git", "Docker",
-      "MySQL", "MongoDB", "Workbench", "ServiceNow"
+      "Docker", "Azure DevOps", "CI/CD pipelines", "AWS S3", "Git", "Postman", "Linux", "MySQL", "MongoDB", "Redis", "Salesforce Workbench", "ServiceNow",
     ]
   }
 ];

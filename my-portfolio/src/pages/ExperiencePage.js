@@ -21,9 +21,10 @@ const experiences = [
     logo: capgeminiLogo,
     period: "Jul 2022 – Jul 2023",
     bullets: [
-      "Led project teams in delivering Salesforce-based solutions.",
-      "Mentored new hires and facilitated knowledge sharing sessions.",
-      "Managed client communications and requirement gathering.",
+      "Led development and deployment of a Salesforce-based Order Management System for Ryder System, Inc., streamlining order processing and operational workflows.",
+      "Designed and integrated RESTful APIs for real-time data exchange between Salesforce and third-party systems.",
+      "Automated CI/CD pipelines using Azure DevOps and Git, reducing deployment time by 40% and improving reliability.",
+      "Refactored Apex backend logic and optimized SOQL/SQL queries to enhance system performance and scalability.",
     ],
   },
   {
@@ -32,9 +33,11 @@ const experiences = [
     logo: capgeminiLogo,
     period: "Jun 2021 – Jun 2022",
     bullets: [
-      "Developed and optimized Salesforce solutions using Apex and LWC.",
-      "Designed and integrated RESTful APIs with third-party services.",
-      "Troubleshot and resolved system issues to improve reliability.",
+      "Designed and implemented Lightning Web Components (LWC), Apex classes, and Visualforce pages to support key business functionalities.",
+      "Created and executed unit tests using Apex and JUnit, maintaining 85%+ code coverage.",
+      "Participated in Agile ceremonies by providing technical estimations and supporting sprint planning and backlog grooming.",
+      "Analyzed customer-reported issues, implemented hotfixes, and ensured smooth post-deployment transitions.",
+      "Mentored junior team members on Salesforce development best practices and clean coding principles.",
     ],
   },
   {
@@ -43,18 +46,20 @@ const experiences = [
     logo: capgeminiLogo,
     period: "Jan 2021 – May 2021",
     bullets: [
-      "Developed tools to automate manual tasks in Salesforce.",
-      "Supported the full project life cycle for client implementations.",
+      "Focused on mastering enterprise development workflows within the Salesforce ecosystem, including Apex, Visualforce, and Lightning Web Components.",
+      "Shadowed senior developers to gain hands-on experience in real-world application design and debugging.",
+      "Completed internal training on VSTS and Agile methodology, contributing to small-scale code enhancements and project documentation.",
     ],
   },
   {
-    title: "Marketing Promoter (Internship)",
+    title: "Full-Stack Developer (Internship)",
     company: "BrainWeave",
     logo: brainweaveLogo,
-    period: "Mar 2019 – Apr 2019",
+    period: "Feb 2019 – Jul 2019",
     bullets: [
-      "Promoted BrainWeave's brand on campus and at events.",
-      "Coordinated with marketing team to increase brand awareness.",
+      "Developed real-time student and parent dashboards in React and TypeScript, integrating personalized learning insights, and refactored a legacy Vue.js codebase into a React Hooks architecture with Context API, reducing load times by 30% and improving maintainability.",
+      "Designed and implemented secure REST and GraphQL APIs for over 7,000 students across 120 NGOs, ensuring scalable, efficient access to educational data.",
+      "Built CI/CD pipelines with GitHub Actions and Azure DevOps, cutting manual deployment efforts by 80% and enforcing rigorous code quality standards.",
     ],
   },
 ];
